@@ -18,12 +18,14 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-
 ## Зависимости
 - Python 3.8+
 - PyQt6
 - qrcode[pil]
 - Pillow
+
+## Сборка standalone версии
+- pyinstaller qr-code-generator.spec
 
 ## Использование:
 - Введите текст
