@@ -12,7 +12,6 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
 from PyQt6.QtGui import QPixmap, QFont, QIcon
 from PyQt6.QtCore import Qt
 
-
 class QRCodeGenerator(QMainWindow):
     """Main window for QR code generator application"""
     
@@ -20,7 +19,14 @@ class QRCodeGenerator(QMainWindow):
         super().__init__()
         self.current_qr_image = None
         self.initUI()
-        
+
+    def center_window(self):
+        """Универсальная функция центрирования любого QWidget"""
+        frame = self.frameGeometry()
+        center_point = QApplication.primaryScreen().availableGeometry().center()
+        frame.moveCenter(center_point)
+        self.move(frame.topLeft())
+
     def initUI(self):
         """Initialize the user interface"""
         self.setWindowTitle("QR code generator")
@@ -62,6 +68,8 @@ class QRCodeGenerator(QMainWindow):
         
         # Apply styles
         self.apply_styles()
+
+        self.center_window()
     
     def create_input_section(self):
         """Create input section layout"""
