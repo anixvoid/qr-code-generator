@@ -21,7 +21,7 @@ class QRCodeGenerator(QMainWindow):
         self.initUI()
 
     def center_window(self):
-        """Универсальная функция центрирования любого QWidget"""
+        """Window centering function"""
         frame = self.frameGeometry()
         center_point = QApplication.primaryScreen().availableGeometry().center()
         frame.moveCenter(center_point)
